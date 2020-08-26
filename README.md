@@ -1,15 +1,15 @@
 ## Home Page 
 
-<img src="https://github.com/dpjm94/Euro/blob/master/home.png" width="500">
+<img src="https://github.com/dpjm94/Euro/blob/master/home.png" width="300">
 
 ## List Page
 
-<img src="https://github.com/dpjm94/Euro/blob/master/list.png" width="500">
+<img src="https://github.com/dpjm94/Euro/blob/master/list.png" width="300">
 
 ## CVI (confirmation of verbal instruction) Page
 
-<img src="https://github.com/dpjm94/Euro/blob/master/cvi.png" width="500">
+<img src="https://github.com/dpjm94/Euro/blob/master/form.png" width="300">
 
 ## PDF Page
 
-<img src="https://github.com/dpjm94/Euro/blob/master/pdf.png" width="500">
+<img src="https://github.com/dpjm94/Euro/blob/master/formpdf.png" width="300">
