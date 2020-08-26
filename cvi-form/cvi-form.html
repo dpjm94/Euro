@@ -1,0 +1,260 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <ion-title>
+        C.V.I.
+      </ion-title>
+
+      <ion-buttons end>
+        <button ion-button icon-only (click)="createPdf()"><ion-icon ios="ios-done-all" md="md-done-all"></ion-icon></button>
+      </ion-buttons>
+
+      <ion-buttons end>
+        <button ion-button icon-only (click)="downloadPdf()" [disabled]="!pdfObj"><ion-icon ios="ios-download" md="md-download"></ion-icon></button>
+      </ion-buttons>
+
+
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+    <ion-grid>
+        <ion-row justify-content-center align-items-center>
+    <ion-card>
+    <ion-list>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label stacked>Client</ion-label>
+          <ion-input maxlength="60" [(ngModel)]="firstObj.client"></ion-input>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+      
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label  stacked>Date</ion-label>
+          <ion-datetime displayFormat="DD/MMMM/YYYY" [(ngModel)]="firstObj.date"></ion-datetime>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label  stacked>Project</ion-label>
+          <ion-input maxlength="60" [(ngModel)]="firstObj.project"></ion-input>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label stacked>RequestNo</ion-label>
+          <ion-input maxlength="10" [(ngModel)]="firstObj.requestNo"></ion-input>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label stacked>Tick Approciate Box:</ion-label>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-item>
+          <ion-label stacked>CVI</ion-label>
+          <ion-checkbox  [(ngModel)]="firstObj.cvi"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Site Memo</ion-label>
+          <ion-checkbox  [(ngModel)]="firstObj.sitememo"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Notification of a delay</ion-label>
+          <ion-checkbox [(ngModel)]="firstObj.not"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Site Record</ion-label>
+          <ion-checkbox [(ngModel)]="firstObj.site"></ion-checkbox>
+        </ion-item>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label stacked>Area Reference</ion-label>
+          <ion-textarea maxlength="80"[(ngModel)]="firstObj.areaRef" rows="2"></ion-textarea>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label color="black" stacked>Note</ion-label>
+          <ion-textarea [(ngModel)]="firstObj.note" rows="10"></ion-textarea>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+          <ion-label stacked>Signature for Client</ion-label>
+          <signature-pad #sigpad1 [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad> 
+        </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <button ion-button full color="light" class="ClearBtn" (click)="drawClear()">Clear</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+            <ion-label stacked>Signature for Euro-City (Eastern)</ion-label>
+            <signature-pad #sigpad2 [options]="signaturePadOptions2" (onBeginEvent)="drawStart2()" (onEndEvent)="drawComplete2()"></signature-pad>
+          </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <button ion-button full color="light" class="ClearBtn" (click)="drawClear2()">Clear</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+          <ion-label  stacked>Measurement Reference</ion-label>
+          <ion-input maxlength="30" [(ngModel)]="firstObj.measurement"></ion-input>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+          <ion-label  stacked>Daywork Reference</ion-label>
+          <ion-input maxlength="30" [(ngModel)]="firstObj.daywork"></ion-input>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+          <ion-label stacked>Drawing Reference</ion-label>
+          <ion-input maxlength="30" type="text" [(ngModel)]="firstObj.drawing"></ion-input>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+          <ion-label stacked>Programme Effect</ion-label>
+          <ion-input maxlength="30" [(ngModel)]="firstObj.programme"></ion-input>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid *ngIf="buttonClicked4">
+                <ion-row>
+                  <ion-col>
+                    <ion-label stacked><b>Pictures</b> <br>
+                      (Select something - the picture will show)</ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid *ngIf="buttonClicked">
+                <ion-row>
+                  <ion-col>
+                    <button ion-button full class="ClearBtn" color="light" class="ClearBtn" (click)="accessGallery()">Upload an Image</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <img [src]="base64Image" *ngIf="base64Image" />
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+             <ion-grid *ngIf="buttonClicked1">
+                <ion-row>
+                  <ion-col>
+                    <button ion-button full color="light" class="ClearBtn" (click)="accessGallery1()">Add Another Picture</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <img [src]="base64Image1" *ngIf="base64Image1" />
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid *ngIf="buttonClicked2">
+                <ion-row>
+                  <ion-col>
+                    <button ion-button full class="ClearBtn" color="light" (click)="accessGallery2()">Add Another Picture</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <img [src]="base64Image2" *ngIf="base64Image2" />
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid *ngIf="buttonClicked3">
+                <ion-row>
+                  <ion-col>
+                    <button ion-button full class="ClearBtn" color="light" (click)="accessGallery3()">Add Last Picture</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <img [src]="base64Image3" *ngIf="base64Image3" />
+                  </ion-col>
+                </ion-row>
+              </ion-grid> 
+
+        <br>
+
+      </ion-list>
+    </ion-card>
+    </ion-row>    
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row justify-content-center align-items-center>
+      <button ion-button full color="green" class="btn" (click)="createPdf()">Save</button> 
+      <button ion-button full class="btn" (click)="downloadPdf()"  [disabled]="!pdfObj">Download</button>
+    </ion-row>
+  </ion-grid>
+
+    
+
+</ion-content> 

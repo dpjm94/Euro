@@ -1,0 +1,127 @@
+page-cvi-form {
+    signature-pad{
+        canvas{
+            border:1px dashed #333333;
+            width: 100%; height: 100px;
+            text-align:center;
+            max-width: 300px;
+            width: 100%;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @media (min-width: 567px) {
+            canvas{
+                border:1px dashed #333333;
+                width: 100%; height: 100px;
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                max-width: 300px;
+            }
+          }
+        
+    }
+
+    @media (min-width: 567px){
+        ion-label{
+        font-size: 1.0625em !important;
+    }
+}
+    
+
+    ion-input{
+       //background-color: #f1f1f1;
+       border: 1px solid #c5c5c5;
+       height: 32px;
+    }
+
+    ion-label{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    ion-datetime{
+        border: 1px solid #c5c5c5;
+        height: 32px;
+     }
+
+    ion-textarea{
+       border: 1px solid #c5c5c5;
+    }
+
+    ion-card{
+        border: 1px solid #d2d2d2;
+
+        ion-card-header{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+
+        ion-card-content{
+           text-align: justify;
+        }
+
+    }
+
+    ion-grid{
+        margin-bottom: -10px;
+    }
+
+    @media (min-width: 567px) {
+        .btn {
+            display:block;
+            width: 60%;
+            border: 1px solid #333333;
+            position: relative;
+            text-align: center;
+            
+          }
+        }
+    
+    
+        .btn{
+            display:block;
+            border: 1px solid #333333;
+        }
+    
+        .ClearBtn{
+            display:block;
+            border: 1px solid #333333;
+            width: 100%;
+        }
+
+
+    .title.title-md {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 70%;
+        text-align: center;
+    }
+
+    .title.title-wp {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 70%;
+        text-align: center;
+    }
+
+    ion-card{
+        @media (min-width: 567px) {
+                max-width: 60%;
+                min-width: 60%;
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px;
+        }
+}
+
+
+
+}

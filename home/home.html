@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="secondary" style="background: linear-gradient(red, orange);" hideBackButton="true">
+
+    <ion-title>
+        <img style="width: 110px;" src="assets/imgs/euroLogo.png">
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<div padding>
+  <h3>Forms</h3>
+  <hr style="border: 1px solid #fbb124; background-color: #fbb124; padding: 2px 0 2px 0"> 
+</div>  
+ 
+<ion-card padding style="border-radius: 10px">
+  <button ion-item full (click)="goToHSPage()">
+    <ion-icon style="font-size: 40px; color: #fbb124"  ios="ios-headset" md="md-headset" item-start>
+    </ion-icon>
+    <ion-icon style="color: green" md="md-arrow-forward" item-end></ion-icon>
+    <ion-label>
+      <h1><strong>H&#38;S FORMS</strong></h1>
+      <h2 style="color: gray; font-weight: 500;">12 forms</h2>
+    </ion-label>
+
+  </button>
+</ion-card>
+
+<div style="padding: 2px 0 2px 0">
+</div>
+
+<ion-card padding style="border-radius: 10px">
+  <button ion-item full (click)="goToSiteForm()">
+      <ion-icon style="font-size: 40px; color: #fbb124" ios="ios-hammer" md="md-hammer" item-start>
+      </ion-icon>
+      <ion-icon style="color: green" md="md-arrow-forward" item-end></ion-icon>
+    <ion-label>
+      <h1><strong>SITE FORMS</strong></h1>
+      <h2 style="color: grey; font-weight: 500;">14 forms</h2>
+    </ion-label>
+  </button>
+</ion-card>
+  
+</ion-content>

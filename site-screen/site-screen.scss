@@ -1,0 +1,29 @@
+page-site-screen {
+    .title.title-md {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 70%;
+        text-align: center;
+    }
+
+    .title.title-wp {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 70%;
+        text-align: center;
+    }
+
+    ion-card{
+        @media (min-width: 567px) {
+                max-width: 60%;
+                min-width: 60%;
+                width: 100%;
+        }
+}
+}
