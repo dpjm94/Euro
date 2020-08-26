@@ -2,7 +2,7 @@
 
 <img src="https://github.com/dpjm94/Euro/blob/master/home.png" width="300">
 
-## List Page
+## (Site Screen) List Page
 
 <img src="https://github.com/dpjm94/Euro/blob/master/list.png" width="300">
 
